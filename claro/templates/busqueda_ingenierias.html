@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %} busqueda{% endblock %}
+
+{% block content%}
+    <p>estamos a dia: {{ahora}}</p>
+    <form action="/search/" method="GET">
+        <input type="text" name="sitio">
+        <input type="submit" value="buscar">
+        <input type="checkbox" name="tecno2g"  value="2">2G
+        <input type="checkbox" name="tecno3g"  value="3">3G
+        <input type="checkbox" name="tecno4g"  value="4">4G
+    </form>
+    <a href="/logout">Cerrar sesión</a>
+
+
+{% endblock %}

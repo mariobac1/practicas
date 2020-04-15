@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %} resultado{% endblock %}
+
+{% block content%}
+
+<p>estamos a dia: {{ahora}}</p>
+<!--<p>se busco la tecnologia: {{tecnologia}}</p> -->
+<a href="/sendmail">enviar correo</a>
+<button type="button" onclick="alert('no hago nada, falle en mi mision')">boton de broma</button>
+<p>estas buscando <strong>{{query}}</strong></p>
+    <p>{{name}}</p>
+    <p>{{name2}}</p>
+    <p>{{name3}}</p>
+    <p>{{adjunto2}}</p>
+    {% if ide %}
+        <p>TECNOLOGIA 2G</p>
+        <p>celdas encontradas: {{ide|length}} </p>
+        <ul>
+            {% for sitios in ide%}
+                <li>
+                    {{sitios.SiteName}} {{sitios.RNC}} {{sitios.Cellname}} {{sitios.Cell}} 
+                 </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if ide2 %}
+        <p>TECNOLOGIA 3G</p>
+        <p>celdas encontradas: {{ide2|length}} </p>
+        <ul>
+            {% for sitios in ide2%}
+                <li>
+                    {{sitios.SiteName}} {{sitios.RNC}} {{sitios.Cellname}} {{sitios.Cell}} 
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+   
+    {% if ide3 %}
+        <p>TECNOLOGIA 4G</p> 
+        <p>celdas encontradas: {{ide3|length}} </p>
+        <ul>
+            {% for sitios in ide3%}
+                <li>
+                    {{sitios.SiteName}} {{sitios.RNC}} {{sitios.Cellname}} {{sitios.Cell}} 
+                </li>
+            {% endfor %}
+        </ul>
+
+    {% endif %}
+
+{% endblock %}
